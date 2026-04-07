@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from 'react';
+import React, { createContext, useState, useCallback, useMemo } from 'react';
 
 // Context do carrinho de compras
 export const CartContext = createContext({});
@@ -44,10 +44,10 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   }, []);
 
-  // Calcula total do carrinho
-  const cartTotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
+  // Calcula total do carrinho (memoizado para evitar recálculo desnecessário)
+  const cartTotal = useMemo(
+    () => cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    [cartItems]
   );
 
   return (

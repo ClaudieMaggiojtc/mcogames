@@ -7,6 +7,8 @@
 // =============================================================
 
 // ✅ SEU NÚMERO DE WHATSAPP (formato internacional, sem + nem espaços)
+// ⚠️ IMPORTANTE: substitua pelo seu número real antes de publicar o app!
+// Exemplo: '5521987654321' (55=Brasil, 21=DDD, 987654321=número)
 export const WHATSAPP_NUMBER = '5511999999999';
 
 // ✅ CATÁLOGO DE JOGOS
